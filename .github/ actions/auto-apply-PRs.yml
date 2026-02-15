@@ -1,1 +1,15 @@
-name: Auto-apply PRs\n on: [pr前排] \n jobs:\n - name: Auto-apply PR\n   runs-on: ubuntu-latest\n   steps:\n     - name: Apply PR\n       with:\n         input:\n           PR number: ${{ github.event.pr.number }}\n     - name:Wait for pages to load\n      duration: 3\n     - name:exit\n       with:\n         message: 'PR已成功应用。'
+name: Auto-apply PRs
+on: [pr前排]
+jobs:
+  - name: Auto-apply PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply PR
+        with:
+          input:
+            PR number: ${{ github.event.pr.number }}
+      - name: Wait for pages to load
+        duration: 3
+      - name: exit
+        with:
+          message: 'PR已成功应用。'
